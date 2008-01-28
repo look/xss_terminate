@@ -10,6 +10,10 @@ able to enter HTML. The plugin allows you remove bad HTML with your choice
 of two whitelist-based sanitizers, or to skip HTML sanitization entirely on
 a per-field basis.
 
+To install, do:
+
+  script/plugin install http://xssterminate.googlecode.com/svn/trunk/xss_terminate
+
 == HTML sanitization
 
 A note on your choices.
