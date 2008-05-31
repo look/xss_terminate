@@ -29,6 +29,8 @@ module XssTerminate
         
         field = column.name.to_sym
         value = self[field]
+
+        next if value.nil?
         
         if xss_terminate_options[:except].include?(field)
           next

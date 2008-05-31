@@ -47,4 +47,13 @@ class XssTerminateTest < Test::Unit::TestCase
     
     assert_equal "&lt;script&gt;alert('xss in extended')&lt;/script&gt;", r.extended
   end
+  
+  # issue reported by linojon
+  def test_nil_attributes_should_be_allowed_with_html5
+    review = Review.create!(:title => nil, :body => nil)
+    
+    assert_nil review.title
+    assert_nil review.body
+  end
+    
 end
