@@ -55,5 +55,13 @@ class XssTerminateTest < Test::Unit::TestCase
     assert_nil review.title
     assert_nil review.body
   end
+  
+  # issue reported by Garrett Dimon and jmcnevin
+  def test_active_record_session_store_does_not_cause_nil_exception
+    assert_nil CGI::Session::ActiveRecordStore::Session.xss_terminate_options
+
+    session = CGI::Session::ActiveRecordStore::Session.new(:session_id => 'foo', :data => 'blah')
+    assert session.save
+  end
     
 end

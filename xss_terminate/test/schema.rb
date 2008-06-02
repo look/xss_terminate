@@ -31,4 +31,10 @@ ActiveRecord::Schema.define(:version => 0) do
     t.column :person_id, :integer
     t.column :created_on, :datetime
   end
+  
+  create_table :sessions, :force => true do |t|
+    t.string :session_id, :null => false
+    t.text :data
+    t.timestamps
+  end
 end
