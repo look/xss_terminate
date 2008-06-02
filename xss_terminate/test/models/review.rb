@@ -1,3 +1,4 @@
+# this model uses html5lib sanitization
 class Review < ActiveRecord::Base
   belongs_to :person
   
