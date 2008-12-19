@@ -46,6 +46,8 @@ module XssTerminate
           self[field] = RailsSanitize.full_sanitizer.sanitize(value)
         end
       end
+      
+      valid?
     end
   end
 end
