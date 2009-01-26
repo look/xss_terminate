@@ -12,7 +12,7 @@ a per-field basis.
 
 To install, do:
 
-  script/plugin install http://xssterminate.googlecode.com/svn/trunk/xss_terminate
+  script/plugin install git://github.com/look/xss_terminate.git
 
 == HTML sanitization
 
@@ -69,7 +69,7 @@ the before_save hook.
 
 +xss_terminate+ is based on +acts_as_sanitized+. Here is what's different:
 
-* Supports Rails 2.0-2.2 (may work on edge Rails)
+* Supports Rails 2.0-2.2 (may work on edge Rails, but I haven't tested it)
 * Automatic. It is included with default options in <tt>ActiveReord::Base</tt> so all your models are sanitized.
 * It works with migrations. Columns are fetched when model is saved, not when the class is loaded.
 * You can decide whether to sanitize or strip tags on a field-by-field basis instead of model-by-model.
@@ -87,6 +87,8 @@ Written by {Luke Francl}[http://railspikes.com] and based on acts_as_sanitized b
 {Alex Payne}[http://www.al3x.net].
 
 HTML5Lib sanitization by {Jacques Distler}[http://golem.ph.utexas.edu/~distler].
+
+Bug fixes and reports from a cast of thousands.
 
 == License
 
