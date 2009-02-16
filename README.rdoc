@@ -40,7 +40,7 @@ with a list of fields not to process:
 To sanitize HTML with Rails's built-in sanitization, use the <tt>:sanitize</tt> option:
 
   class Review < ActiveRecord::Base
-    xss_sanitize :sanitize => [ :body, :author_name]
+    xss_terminate :sanitize => [ :body, :author_name]
   end
  
 To sanitize HTML with {HTML5Lib}[http://code.google.com/p/html5lib/] 
@@ -69,7 +69,7 @@ the before_save hook.
 
 +xss_terminate+ is based on +acts_as_sanitized+. Here is what's different:
 
-* Rails 2.0-ready.
+* Supports Rails 2.0-2.2 (may work on edge Rails)
 * Automatic. It is included with default options in <tt>ActiveReord::Base</tt> so all your models are sanitized.
 * It works with migrations. Columns are fetched when model is saved, not when the class is loaded.
 * You can decide whether to sanitize or strip tags on a field-by-field basis instead of model-by-model.
