@@ -34,7 +34,7 @@ module XssTerminate
         field = column.name.to_sym
         value = self[field]
 
-        next if value.nil?
+        next if value.nil? || !value.is_a?(String)
         
         if xss_terminate_options[:except].include?(field)
           next
