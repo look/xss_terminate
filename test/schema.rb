@@ -37,4 +37,13 @@ ActiveRecord::Schema.define(:version => 0) do
     t.text :data
     t.timestamps
   end
+  
+  create_table :groups, :force => true do |t|
+    t.column :person_id,    :integer
+    t.column :title,        :string
+    t.column :description,  :string
+    t.column :members,      :text
+    t.timestamps
+  end
+  
 end

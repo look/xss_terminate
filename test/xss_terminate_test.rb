@@ -69,4 +69,15 @@ class XssTerminateTest < Test::Unit::TestCase
     assert !c.save
     assert_not_nil c.errors.on(:title)
   end
+  
+  def test_valid_work_with_serialize_fields
+    g = Group.new(:title => "XSS Terminate group", :description => 'desc', :members => [1,2,3])
+    assert g.save
+  end
+  
+  def test_valid_work_with_number_fields
+    g = Group.new(:title => "XSS Terminate group", :description => 123456, :members => {:hash => 'rocket'})
+    assert g.save
+  end
+
 end
