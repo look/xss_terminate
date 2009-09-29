@@ -1,6 +1,6 @@
 require 'action_pack/version'
 
-# This class exists so including the Rails HTML sanitization helpers doesn't polute your models.
+# This class exists so including the Rails HTML sanitization helpers doesn't pollute your models.
 class RailsSanitize
   if ActionPack::VERSION::MINOR >= 2 # Rails 2.2+
     extend ActionView::Helpers::SanitizeHelper::ClassMethods
